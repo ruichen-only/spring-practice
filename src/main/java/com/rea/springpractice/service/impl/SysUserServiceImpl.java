@@ -27,4 +27,12 @@ public class SysUserServiceImpl implements SysUserService {
     List<SysUser> sysUsers = sysUserMapper.selectByExample(example);
     return !sysUsers.isEmpty();
   }
+
+  @Override
+  public SysUser getUserByName(String username) {
+    SysUserExample example = new SysUserExample();
+    example.createCriteria().andUsernameEqualTo(username);
+    List<SysUser> sysUsers = sysUserMapper.selectByExample(example);
+    return sysUsers.isEmpty() ? null : sysUsers.get(0);
+  }
 }
