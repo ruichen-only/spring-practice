@@ -31,3 +31,22 @@ spring:
       max-idle: 8  # 连接池中的最大空闲连接
       min-idle: 0 # 连接池中的最小空闲连接
     password: 12345
+  mail:
+    host: smtp.163.com
+    username: ruichen_only@163.com
+    password: GGEDUDDSPPNQFFSL
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+management:
+  security:
+    enabled: false #关掉安全认证
+  port: 8889
+  context-path: /monitor #actuator的访问路径
+endpoints:
+  shutdown:
+    enabled: true
